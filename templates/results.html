@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <h1>Here are the recommended songs!</h1>
+{% endblock %}
+
+{% block body %}
+    <div id=searchagainbutton>
+        <a class="searchagain" href="/">Search Again</a>
+    </div>
+    {% for songs in recommended_songs %}
+        {% if songs != None %}
+        <div class=songheader>
+            <div class="songtitle" style="word-wrap: break-word"><span class="songtext">{{ songs['header'] }}</span></div>
+        </div>
+        <div class="resultbox">
+            <a class="youtubelink">Listen now on YouTube:</a>
+            <a class="youtubelinkicon" href="{{ songs['youtube_link'] }}" target="_blank"></a>
+            <a class="spotifylink">Listen now on Spotify:</a>
+            <a class="spotifylinkicon" href="{{ songs['spotify_link'] }}" target="_blank"></a>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="bottomblock"></div>
+{% endblock %}

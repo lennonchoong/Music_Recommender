@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+    <div class="center">
+    <a class="inputsong">Let Us Recommend You Some Songs</a>
+    <form class="form" action="/results" method = 'POST' >
+        <div class="submitfield">
+            <input id="subbox" type="text" name="song" placeholder="Michael Jackson Beat It">
+            <input id="submitbutton" type="submit" value="Search">
+        </div>
+    </form>
+    </div>
+    <a class="smalltext">Enter a song for us to base your recommendations on</a>
+    </div>
+{% endblock %}
