@@ -1,19 +1,17 @@
-import requests
-from bs4 import BeautifulSoup
-from re import findall
-from random import sample
+from googleapiclient.discovery import build
+
+api_key = "AIzaSyD2VGBW6ANL3QQb9WAWFa9AcHhcxzM_xTU"
+
+youtube = build('youtube', 'v3', developerKey=api_key)
 
 def search_vid(search):
-    url = requests.get('https://www.youtube.com/results?search_query='+search)
-
-    soup = BeautifulSoup(url.text, "html.parser")
     try:
-        first_div = soup.find("div", { "class" : "yt-lockup-content"})
-    
-        href= first_div.find('a', href=True)
-        header = href.text
-        video_link = "https://www.youtube.com"+href['href']
+        req = youtube.search().list(part='snippet', q=search, type='video', maxResults=1)
+        res = req.execute()
+        res = res["items"][0]
+        video_link = "https://www.youtube.com/watch?v=" + (res['id'])["videoId"]
+        header = (res["snippet"])["title"]
         return {"header" : header, "youtube_link" : video_link}
-
     except:
         pass
+
