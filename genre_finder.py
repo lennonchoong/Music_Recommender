@@ -42,12 +42,12 @@ def recommend_songs(genre, input_song):
 
     for url in urls:
         browser.get(url)
-
+        i = 0
         songs = zip(browser.find_elements_by_css_selector("div.title"), browser.find_elements_by_css_selector("div.uDMnUc"))
         for artist, song in songs:
-            if input_song not in song.text:
+            if input_song not in song.text and i < 12:
                 recommended_list.append({"song": artist.text, "artist": (song.text).split(" ·")[0]})
-
+                i += 1
     recommended_list = sample(recommended_list, 8)
     return recommended_list
 
