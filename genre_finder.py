@@ -28,7 +28,7 @@ def genre_finder(songs):
             song_list_sample.append(genre.text)
         except:
             pass
-
+    browser.quit()
     return [x for x in song_list_sample if x] ##### result #####
 
 def recommend_songs(genre, input_song):
@@ -49,5 +49,6 @@ def recommend_songs(genre, input_song):
                 recommended_list.append({"song": artist.text, "artist": (song.text).split(" ·")[0]})
                 i += 1
     recommended_list = sample(recommended_list, 8)
+    browser.quit()
     return recommended_list
 
