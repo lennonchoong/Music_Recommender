@@ -11,7 +11,7 @@ def search_vid(search):
         res = res["items"][0]
         video_link = "https://www.youtube.com/watch?v=" + (res['id'])["videoId"]
         header = (res["snippet"])["title"]
-        return {"header" : header, "youtube_link" : video_link}
+        return {"header" : header.replace("&amp;", "&") , "youtube_link" : video_link}
     except:
         pass
 
