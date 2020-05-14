@@ -13,5 +13,5 @@ A base song is submitted by the user. Recommended songs will be returned based o
 * [spotify_link.py](https://github.com/lennonchoong/Music_Recommender/blob/master/spotify_link.py) - Searches for recommended song's Spotify links
 * [Procfile](https://github.com/lennonchoong/Music_Recommender/blob/master/Procfile) - Initializes Flask Web App on Heroku
 * [requirements.txt](https://github.com/lennonchoong/Music_Recommender/blob/master/requirements.txt) - Dependecies such as modules and libraries
-* [static](https://github.com/lennonchoong/Music_Recommender/tree/master/static) - CSS files and images
+* [static](https://github.com/lennonchoong/Music_Recommender/tree/master/static) - Static files (CSS & Images)
 * [templates](https://github.com/lennonchoong/Music_Recommender/tree/master/templates) - HTML files
