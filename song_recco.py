@@ -15,6 +15,8 @@ def search_vid(search):
             header = header.replace("&amp;", "&")
         if "&#39;" in header:
             header = header.replace("&#39;", "'")
+        if "&quot;" in header:
+            header = header.replace("&quot;", "'")
         return {"header" : header, "youtube_link" : video_link}
     except:
         pass
