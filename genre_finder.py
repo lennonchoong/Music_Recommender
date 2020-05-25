@@ -9,6 +9,7 @@ op.add_argument('--headless')
 op.add_argument("--disable-dev-shm-usage")
 op.add_argument("--no-sandbox")
 classes = ['div.Z0LcW',
+           'div.title',
            'div.TZNJBf',
            '#rso > div:nth-child(1) > div.kp-blk.EyBRub.c14z5c.Wnoohf.OJXvsb > div.xpdopen > div.ifM9O > div > div.SALvLe.farUxc.mJ2Mod > div > div:nth-child(4) > div > div > span.LrzXr.kno-fv > a',
            'LrzXr.kno-fv',
